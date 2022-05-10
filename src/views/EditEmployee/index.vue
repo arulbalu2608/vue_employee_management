@@ -1,6 +1,6 @@
 <template>
   <div class="add container">
-    <h1 class="pt-3">Add Employee</h1>
+    <h1 class="pt-3">Edit Employee</h1>
     <div class="row py-5">
       <div class="col-6">
         <label class="form-label">Empolyee ID</label>
@@ -42,7 +42,7 @@
 
     <div class="text-end">
       <button type="button" class="btn btn-success" @click="handleSubmit">
-        Add Employee
+        Save Changes
       </button>
     </div>
   </div>
@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  name: "AddEmployee",
+  name: "EditEmployee",
   data() {
     return {
       employeeDetails: {

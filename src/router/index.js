@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/Home/HomeView.vue";
 import AddEmployee from "../views/AddEmployee";
+import EditEmployee from "../views/EditEmployee";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: "/add-employee",
     name: "addEmployee",
     component: AddEmployee,
+  },
+  {
+    path: "/edit-employee",
+    name: "editEmployee",
+    component: EditEmployee,
   },
 ];
 
