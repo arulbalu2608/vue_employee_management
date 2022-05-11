@@ -4,7 +4,12 @@
     <div class="row py-5">
       <div class="col-6">
         <label class="form-label">Empolyee ID</label>
-        <input type="text" v-model="employeeDetails.id" class="form-control" />
+        <input
+          type="text"
+          v-model="employeeDetails.id"
+          disabled
+          class="form-control cursor-notallowed"
+        />
       </div>
       <div class="col-6">
         <label class="form-label">Empolyee Name</label>
@@ -62,18 +67,24 @@ export default {
       },
     };
   },
+  mounted() {
+    let data = this.$route.params;
+    this.employeeDetails = data;
+  },
+
   methods: {
     handleSubmit() {
       if (
-        this.employeeDetails.id != "" &&
-        this.employeeDetails.name != "" &&
-        this.employeeDetails.email != "" &&
-        this.employeeDetails.mobileno != ""
+        this.employeeDetails?.id != "" &&
+        this.employeeDetails?.name != "" &&
+        this.employeeDetails?.email != "" &&
+        this.employeeDetails?.mobileno != ""
       ) {
         let body = this.employeeDetails;
-        this.$store.dispatch("employeeModule/addEmployee", body);
-        this.$toast.success("Added Successfully");
-        this.$router.back();
+
+        this.$store.dispatch("employeeModule/editEmployee", body);
+        this.$toast.success("Edited Successfully");
+        this.$router.push("/");
       } else {
         this.$toast.error("Enter All the field to submit");
       }
@@ -83,6 +94,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.cursor-notallowed {
+  cursor: not-allowed;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
