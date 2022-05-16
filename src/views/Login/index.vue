@@ -1,7 +1,7 @@
 <template>
   <div class="login-content d-flex justify-content-center align-items-center">
     <div>
-      <h1 class="display-5">Employee Mangement Login</h1>
+      <h1 class="display-5">Employee Mangement Login Page</h1>
       <div class="row py-5">
         <div class="col-12">
           <label class="form-label">Email Id</label>
