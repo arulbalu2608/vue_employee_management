@@ -84,7 +84,7 @@ export default {
 
         this.$store.dispatch("employeeModule/editEmployee", body);
         this.$toast.success("Edited Successfully");
-        this.$router.push("/");
+        this.$router.push("/home");
       } else {
         this.$toast.error("Enter All the field to submit");
       }

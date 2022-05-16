@@ -73,7 +73,7 @@ export default {
         let body = this.employeeDetails;
         this.$store.dispatch("employeeModule/addEmployee", body);
         this.$toast.success("Added Successfully");
-        this.$router.push("/");
+        this.$router.push("/home");
       } else {
         this.$toast.error("Enter All the field to submit");
       }

@@ -1,6 +1,8 @@
 export default {
   namespaced: true,
   state: {
+    isSuperAdmin: true,
+    isLoggedIn: false,
     allEmployee: [
       {
         id: "E101",
@@ -10,8 +12,22 @@ export default {
         skills: "React js",
       },
     ],
+    superAdmin: {
+      email: "superadmin@test.com",
+      password: "admin123",
+    },
+    subAdmin: {
+      email: "subadmin@test.com",
+      password: "admin123",
+    },
   },
   mutations: {
+    CHANGE_LOGGIN: (state) => {
+      state.isLoggedIn = !state.isLoggedIn;
+    },
+    CHANGE_ADMIN_STATUS: (state) => {
+      state.isSuperAdmin = !state.isSuperAdmin;
+    },
     ADD_EMPLOYEE: (state, new_employee_details) => {
       state.allEmployee.push(new_employee_details);
     },
@@ -31,6 +47,12 @@ export default {
     },
   },
   actions: {
+    changeLoginStatus: ({ commit }) => {
+      return commit("CHANGE_LOGGIN");
+    },
+    changeAdminStatus: ({ commit }) => {
+      return commit("CHANGE_ADMIN_STATUS");
+    },
     addEmployee: ({ commit }, payload) => {
       return commit("ADD_EMPLOYEE", payload);
     },

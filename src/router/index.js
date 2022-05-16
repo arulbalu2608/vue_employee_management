@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import LoginView from "../views/Login";
 import HomeView from "../views/Home/HomeView.vue";
 import AddEmployee from "../views/AddEmployee";
 import EditEmployee from "../views/EditEmployee";
@@ -6,6 +7,12 @@ import EditEmployee from "../views/EditEmployee";
 const routes = [
   {
     path: "/",
+    name: "login",
+    component: LoginView,
+  },
+
+  {
+    path: "/home",
     name: "home",
     component: HomeView,
   },
